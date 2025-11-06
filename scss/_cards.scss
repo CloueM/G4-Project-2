@@ -1,0 +1,9 @@
+/* 
+
+Let's use variables for the spacing and colors
+    - That means, we shouldn't see any hard coded sizes and colors
+    - Like: 1.5rem, 2rem, #ffff, #fd3f etc...
+
+*/
+
+@use 'variables';
