@@ -1,0 +1,16 @@
+# Ignore the entire Styles folder.
+styles/
+
+# Never commit your node_modules folder.
+node_modules/
+
+# Ignore VS Code settings files.
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+npm-debug.log
+yarn-error.log
