@@ -8,3 +8,20 @@ Call partials here
 /* no need to import variables.scss here */
 @use 'normalize';
 @use 'typography';
+
+
+@use 'body';
+@use 'sections';
+@use 'navigation-bar';
+
+/*sections*/
+@use 'hero-section';
+@use 'video-section';
+@use 'values-section';
+@use 'what-to-expect-section';
+@use 'map-section';
+@use 'about-fertility-section';
+@use 'reviews-section';
+@use 'blog-section';
+
+@use 'footer';
