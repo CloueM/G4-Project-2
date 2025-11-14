@@ -7,42 +7,62 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header>
-        <!-- TODO Navigation bar -->
-        <nav>
+    <header class="navigation">
+        <section class="nav-bar-container">
             <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+                <span class="bar bar1"></span>
+                <span class="bar bar2"></span>
+                <span class="bar bar3"></span>
             </div>
 
             <div class="logo">
-                <img src="path/to/logo.png" alt="Logo">
+                <a href="index.html">
+                    <img src="path/to/logo.png" alt="Alto Pharmacy">
+                </a>
             </div>
-            <p>About alto</p>
-            <ul class="nav-links">
-                <li>How it works</li>
-                <li>Locations & Service</li>
-                <li>Areas</li>
-                <li>FAQs</li>
-                <li>Contact</li>
-            </ul>
 
-            <p>Therapeutic areas</p>
-            <ul>
-                <li>General Health</li>
-                <li>Fertility</li>
-                <li>Diabetes</li>
-                <li>Heart Health</li>
-                <li>Sexual Health</li>
-            </ul>
+            <div class="auth-link">
+                <a href="#">Sign In</a>
+            </div>
+        </section>
 
-            <p>Get started</p>
-            <ul>
-                <li>For Patients</li>
-                <li>For Providers</li>
-                <li>For Partners</li>
-            </ul>
+        <nav class="menu">
+            
+            <div class="menu-header">
+                <a href="#" class="btn-get-started">Get Started</a>
+            </div>
+
+            <div class="menu-content">
+                <div class="nav-group">
+                    <h4 class="nav-category">ABOUT ALTO</h4>
+                    <ul>
+                        <li><a href="#">How It Works</a></li>
+                        <li><a href="#">Locations & Service Areas</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-group">
+                    <h4 class="nav-category">THERAPEUTIC AREAS</h4>
+                    <ul>
+                        <li><a href="#">General Health</a></li>
+                        <li><a href="#">Fertility</a></li>
+                        <li><a href="#">Diabetes</a></li>
+                        <li><a href="#">Heart Health</a></li>
+                        <li><a href="#">Sexual Health</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav-group">
+                    <h4 class="nav-category">GET STARTED</h4>
+                    <ul>
+                        <li><a href="#">For Patients</a></li>
+                        <li><a href="#">For Providers</a></li>
+                        <li><a href="#">For Partners</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     <main>

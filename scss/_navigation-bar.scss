@@ -1,158 +1,194 @@
 @use 'variables';
-
-/* --- 1. Variables matching the Screenshot --- */
-$color-bg-overlay: #FDFBF5; /* The beige background */
-$color-text-primary: #003B5C; /* The deep teal/blue text */
-$color-accent: #D9534F; /* Optional accent */
-$font-serif: 'Georgia', 'Times New Roman', serif; /* Matches the "Pharmacy" font */
-$font-sans: 'Arial', sans-serif;
-
-/* --- 2. Main Navigation Bar (Fixed Header) --- */
-header.navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px; /* Fixed height */
-    background-color: #fff; /* White when closed */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centers the container */
-    z-index: 1000;
-    border-bottom: 1px solid #eee;
-}
-
-/* Container to manage width */
-.logo-hamburger {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    z-index: 1001; /* Keeps logo/burger above the overlay */
-    position: relative;
-}
-
-/* Logo Styling */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    
-    .logo-title a {
-        font-family: $font-serif;
-        color: $color-text-primary;
-        font-size: 1.2rem;
-        text-decoration: none;
-        line-height: 1.1;
-        display: block;
-    }
-    
-    img {
-        width: 40px;
-        height: auto;
-    }
-}
-
-/* --- 3. Hamburger Icon (Transforms to X) --- */
-.hamburger {
-    cursor: pointer;
-    width: 30px;
-    height: 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    span {
-        display: block;
-        height: 2px;
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        background-color: $color-text-primary;
-        transition: all 0.3s ease-in-out;
+        z-index: 1000;
+        background-color: var(--secondary-bg, #fff);
+        border-bottom: 1px solid var(--border, #eee);
     }
 
-    /* The "X" Animation when active class is added */
-    &.active {
-        span.bar1 {
-            transform: rotate(45deg) translate(5px, 6px);
-        }
-        span.bar2 {
-            opacity: 0; /* Hide middle bar */
-        }
-        span.bar3 {
-            transform: rotate(-45deg) translate(5px, -6px);
-        }
-    }
-}
-
-/* --- 4. The Full Screen Overlay Menu --- */
-nav.menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: $color-bg-overlay;
-    padding-top: 80px; /* Push content down below header */
-    
-    /* Hide it by default */
-    display: none; 
-    flex-direction: column;
-    align-items: center; /* Center items like the screenshot */
-    
-    /* When JS adds 'active' class, show it */
-    &.active {
+    .nav-bar-container {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem var(--spacing-xs, 1rem);
+        transition: background-color 0.3s ease;
+        height: 4rem;
     }
 
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        width: 100%;
-        padding: 0 40px; /* Match screenshot side padding */
-    }
-
-    /* The List Items */
-    li {
-        margin-bottom: 20px;
-        border-bottom: 1px solid rgba($color-text-primary, 0.1); /* Subtle dividers */
-        padding-bottom: 10px;
-
-        /* Special style for the Theme Toggle to sit at the top or bottom */
-        &.theme-toggle-container {
-            border: none;
-            margin-bottom: 30px;
-            display: flex;
-            justify-content: flex-end; /* Put toggle on the right */
-        }
-    }
-
-    /* The Links (Typography) */
-    a {
-        font-family: $font-serif; /* Serif font like "How It Works" */
-        font-size: 2rem; /* Large text */
-        color: $color-text-primary;
-        text-decoration: none;
+    .logo a {
         display: flex;
         align-items: center;
-        gap: 15px;
-        transition: color 0.2s;
-
-        &:hover {
-            color: lighten($color-text-primary, 20%);
-        }
-
-        /* Style the icons to match the text size */
-        iconify-icon {
-            font-size: 1.5rem;
-            opacity: 0.8;
-        }
+        justify-content: center;
+        text-decoration: none;
     }
-}
 
-/* Mobile Responsive Tweaks */
-@media (min-width: 768px) {
-    /* Add desktop styles here if needed later */
+    .logo img {
+        height: 2rem;
+        width: auto;
+    }
+
+    .auth-link a {
+        color: var(--text, #003B5C);
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    .hamburger {
+        cursor: pointer;
+        display: block;
+        z-index: 1100;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 2rem;
+        height: 3px;
+        margin: 5px 0;
+        background-color: var(--primary-accent, #003B5C);
+        transition: 0.4s ease;
+        border-radius: 1rem;
+        transform-origin: center;
+    }
+
+    .hamburger.active .bar1 {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar2 {
+        opacity: 0;
+    }
+    .hamburger.active .bar3 {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu {
+        background-color: var(--secondary-bg, #FDFBF5);
+        position: fixed;
+        top: 4rem;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 4rem);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.4s ease;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        padding-bottom: 2rem;
+    }
+
+    .menu.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .menu-header {
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .btn-get-started {
+        background-color: var(--primary-accent, #003B5C);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .menu-content {
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .nav-group .nav-category {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        color: var(--text, #003B5C);
+        opacity: 0.7;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+    }
+
+    .menu ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .menu li {
+        margin-bottom: 0.5rem;
+    }
+
+    .menu a {
+        display: block;
+        text-decoration: none;
+        color: var(--text, #003B5C);
+        font-size: 1.5rem;
+        font-family: serif;
+        transition: color 0.3s ease;
+    }
+
+    .menu a:hover {
+        color: var(--primary-accent, #D9534F);
+    }
+
+@media (min-width: 68em) {
+    .navigation {
+        width: 20rem;
+        height: 100vh;
+        border-right: 1px solid var(--border, #eee);
+        border-bottom: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-bar-container {
+        flex-direction: column;
+        height: auto;
+        padding: 2rem 1rem;
+        border-bottom: 2px solid var(--bg, #eee);
+    }
+
+    .logo {
+        margin-bottom: 1rem;
+    }
+
+    .menu {
+        position: relative;
+        top: 0;
+        height: auto;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        padding-top: 1rem;
+    }
+
+    .menu-header {
+        justify-content: center;
+        padding-bottom: 2rem;
+    }
+
+    .menu-content {
+        padding: 0 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .menu a {
+        font-size: 1.1rem;
+    }
 }
