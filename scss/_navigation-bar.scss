@@ -1,2 +1,158 @@
-/* Let's use variables for the spacing and colors */
 @use 'variables';
+
+/* --- 1. Variables matching the Screenshot --- */
+$color-bg-overlay: #FDFBF5; /* The beige background */
+$color-text-primary: #003B5C; /* The deep teal/blue text */
+$color-accent: #D9534F; /* Optional accent */
+$font-serif: 'Georgia', 'Times New Roman', serif; /* Matches the "Pharmacy" font */
+$font-sans: 'Arial', sans-serif;
+
+/* --- 2. Main Navigation Bar (Fixed Header) --- */
+header.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Fixed height */
+    background-color: #fff; /* White when closed */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centers the container */
+    z-index: 1000;
+    border-bottom: 1px solid #eee;
+}
+
+/* Container to manage width */
+.logo-hamburger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1001; /* Keeps logo/burger above the overlay */
+    position: relative;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    .logo-title a {
+        font-family: $font-serif;
+        color: $color-text-primary;
+        font-size: 1.2rem;
+        text-decoration: none;
+        line-height: 1.1;
+        display: block;
+    }
+    
+    img {
+        width: 40px;
+        height: auto;
+    }
+}
+
+/* --- 3. Hamburger Icon (Transforms to X) --- */
+.hamburger {
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: $color-text-primary;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* The "X" Animation when active class is added */
+    &.active {
+        span.bar1 {
+            transform: rotate(45deg) translate(5px, 6px);
+        }
+        span.bar2 {
+            opacity: 0; /* Hide middle bar */
+        }
+        span.bar3 {
+            transform: rotate(-45deg) translate(5px, -6px);
+        }
+    }
+}
+
+/* --- 4. The Full Screen Overlay Menu --- */
+nav.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $color-bg-overlay;
+    padding-top: 80px; /* Push content down below header */
+    
+    /* Hide it by default */
+    display: none; 
+    flex-direction: column;
+    align-items: center; /* Center items like the screenshot */
+    
+    /* When JS adds 'active' class, show it */
+    &.active {
+        display: flex;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        padding: 0 40px; /* Match screenshot side padding */
+    }
+
+    /* The List Items */
+    li {
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba($color-text-primary, 0.1); /* Subtle dividers */
+        padding-bottom: 10px;
+
+        /* Special style for the Theme Toggle to sit at the top or bottom */
+        &.theme-toggle-container {
+            border: none;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: flex-end; /* Put toggle on the right */
+        }
+    }
+
+    /* The Links (Typography) */
+    a {
+        font-family: $font-serif; /* Serif font like "How It Works" */
+        font-size: 2rem; /* Large text */
+        color: $color-text-primary;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        transition: color 0.2s;
+
+        &:hover {
+            color: lighten($color-text-primary, 20%);
+        }
+
+        /* Style the icons to match the text size */
+        iconify-icon {
+            font-size: 1.5rem;
+            opacity: 0.8;
+        }
+    }
+}
+
+/* Mobile Responsive Tweaks */
+@media (min-width: 768px) {
+    /* Add desktop styles here if needed later */
+}

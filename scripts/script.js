@@ -1,15 +1,16 @@
-/* Scripts */
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-let memuOpen = false;
+const navMenu = document.querySelector('.menu');
+let menuOpen = false;
 
 hamburger.addEventListener('click', () => {
-    if (!memuOpen) {
-        navLinks.style.display = 'block';
+    if (!menuOpen) {
+        navMenu.classList.add('active');
+        hamburger.classList.add('active'); // Add this to animate the X
         menuOpen = true;
     }
     else {
-        navLinks.style.display = 'none';
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
         menuOpen = false;
     }
 });
