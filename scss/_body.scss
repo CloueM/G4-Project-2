@@ -1,2 +1,76 @@
 /* Let's use variables for the spacing and colors */
-@use 'variables';
+@use 'variables' as *;
+@use 'typography' as *;
+
+body {
+    background-color: $primary-background;
+    font-family: $body-font;
+    color: $body-color;
+    font-size: $body-size;
+    line-height: $body-line-height;
+}
+
+h1 {
+    font-family: $heading-font;
+    line-height: $h1-line-height;
+    font-size: $mobile-h1-size;
+    color: $heading-color;
+}
+
+h2, h3, h4 {
+    line-height: $subheading-line-height;
+    color: $heading-color;
+}
+
+h2 {
+    font-size: $mobile-h2-size;
+}
+
+h3 {
+    font-size: $mobile-h3-size;
+}
+
+h4 {
+    font-size: $mobile-h4-size;
+}
+
+button {
+    background-color: $button-background;
+    color: $button-text-color;
+    text-decoration: none;
+
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+}
+
+@media (min-width: $breakpoint) {
+
+    button:hover {
+        background-color: $button-hover;
+    }
+
+    a:hover {
+        color: $link-hover;
+    }
+
+    h1 {
+    font-size: $desktop-h1-size;
+    }
+
+    h2 {
+        font-size: $desktop-h2-size;
+    }
+
+    h3 {
+        font-size: $desktop-h3-size;
+    }
+
+    h4 {
+        font-size: $desktop-h4-size;
+    }
+
+}
