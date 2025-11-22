@@ -1,2 +1,8 @@
 @use 'variables' as *;
 @use 'mixins' as *;
+
+.hero-section {
+    @include section-padding;
+    @include flex-start;
+    background-color: $hero-background;
+}
