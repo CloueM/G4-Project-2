@@ -1,0 +1,29 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.video-section {
+    @include section-padding;
+    background-color: $video-background;
+    max-width: 95%;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding-top: 3rem;
+}
+
+.video-section h3 {
+    text-align: center;
+    font-weight: 400; // change in variables
+    font-family: $heading-font;
+    font-size: 2.5rem; // change in variables
+    padding-bottom: 2rem;
+}
+
+.video {
+    width: 1150px;
+    height: 645px;
+	border-radius: 30px;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+}

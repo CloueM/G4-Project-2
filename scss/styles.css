@@ -530,6 +530,43 @@ This is where we can style our Fonts:
   font-size: 1.5rem;
 }
 
+/* 
+
+This is where we can style our Fonts:
+    - Font sizes
+    - Font weights
+    - Font colors
+    - Font families
+    - etc...
+
+*/
+/* Let's use colors, and spaces for the font sizes here */
+.video-section {
+  padding: 4.6875rem 0;
+  background-color: #F1F6D1;
+  max-width: 95%;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding-top: 3rem;
+}
+
+.video-section h3 {
+  text-align: center;
+  font-weight: 400;
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.video {
+  width: 1150px;
+  height: 645px;
+  border-radius: 30px;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+}
+
 .section-map {
   padding: 4rem 1rem;
   background: #fff;
