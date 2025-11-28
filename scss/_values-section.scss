@@ -50,3 +50,34 @@ img{
 
 }
 
+@media (min-width: $breakpoint) {
+    .values-section {
+
+        .cards{
+
+           max-width: $tablet-card-max-width;
+            margin: 0 auto;
+        }
+
+        .card{
+
+            h3,
+            p {
+                margin: 0;
+            }
+
+            h3{
+                margin-bottom: $space-300;
+            }
+            width: 100%;
+            max-width: $tablet-card-max-width;
+
+            img {
+                max-height:$value-tablet-img;
+                object-fit:contain;
+            }
+
+
+        }
+    }
+}
