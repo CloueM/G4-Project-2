@@ -6,4 +6,9 @@ Let's use variables for the spacing and colors
 
 */
 
-@use 'variables';
+@use 'variables' as *;
+
+//VALUE SECTION CARDS
+$card-img-ratio: 260/170;
+$value-card-padding: 1.875rem;
+$value-card-radius: $space-300;
