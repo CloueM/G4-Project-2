@@ -29,29 +29,26 @@ gap: $space-300;
     text-align:center;
   
     
-    h3{
-
+    h3 {
         font-size: $mobile-h3-size; 
         margin-top: $space-100;
     }
 
-  p{
-
- margin-top: $space-100;
-   
-
-  }
+    p {
+        margin-top: $space-100;
+     }
 }
-img{
-    width: 100%;
-    aspect-ratio: $card-img-ratio;
+   .card img{
+    max-width: 100%;
+    width: auto;
+    max-height: $value-img;
     object-fit: contain;
 }
 
 }
 
 @media (min-width: $breakpoint) {
-    .values-section {
+    .values-section  {
 
         .cards{
 
@@ -59,7 +56,15 @@ img{
             margin: 0 auto;
         }
 
-        .card{
+        .card img {
+                width: auto;
+                max-width: 100%;
+                max-height:$value-img;
+                object-fit:contain;
+            }
+
+            width: 100%;
+            max-width: $tablet-card-max-width;
 
             h3,
             p {
@@ -69,15 +74,35 @@ img{
             h3{
                 margin-bottom: $space-300;
             }
-            width: 100%;
-            max-width: $tablet-card-max-width;
-
-            img {
-                max-height:$value-tablet-img;
-                object-fit:contain;
-            }
-
+        
 
         }
+
+    @media (min-width: $desktop-breakpoint){
+        
+        .values-section{
+           max-width: $desktop-cards-max-width;
+           margin: 0 auto;
+
+            .cards{
+                @include flex-row-center;
+                max-width: $desktop-cards-max-width;
+                margin: 0 auto;
+                padding: 0;
+                
+            }
+
+            .card {
+                width: $value-desktop-card-size;
+                height: $value-desktop-card-size;
+                overflow: hidden;
+                flex-shrink: 0;
+               
+                
+            }
+        }
     }
-}
+        
+    }
+
+

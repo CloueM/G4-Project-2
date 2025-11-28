@@ -27,6 +27,13 @@
     
 }
 
+
+@mixin flex-row-center {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 @mixin button {
     background-color: $button-background;
     color: $button-text-color;
