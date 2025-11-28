@@ -17,4 +17,12 @@ h2 {
 padding: 0 $value-card-padding;
   
 }
+.card{
+    
+    background-color: $primary-background;
+    border: $value-card-border-width solid $value-card-border-color;
+    border-radius: $value-card-radius;
+  
 }
+}
+
