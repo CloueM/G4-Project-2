@@ -1,0 +1,14 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+#expect-section {
+    @include section-padding;
+    background-color: $secondary-background; 
+    
+}
+
+.container {
+    @include flex-column-center;
+    background-color: $expect-background;
+}
