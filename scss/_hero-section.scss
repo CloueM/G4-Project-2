@@ -5,42 +5,35 @@
 .hero-section {
     @include section-padding;
     @include flex-start;
+    flex-wrap: wrap;
     background-color: $hero-background; // for browsers that don't support gradient
     background-image: linear-gradient(to bottom, $hero-background, $primary-background);
-    padding: 7rem 7rem;
+    padding: 0 $space-100;
 }
 
 .hero-info {
-    width: 40%;
-    padding-top: 1rem;
+    text-align: center;
 }
 
-.hero-image {
-    width: 60%;
-}
 
-.hero-info h1 {
-    font-size: 6rem; // change in variables
-    font-weight: 400; // change in variables
-    font-family: $heading-font;
-    line-height: 5rem;
-    margin-bottom: 0;
-}
+@media (min-width: $breakpoint) {
 
-.hero-info h4 {
-    font-size: 2rem; // change in variables
-    font-weight: 500; // change in variables
-    font-family: $heading-font;
-    line-height: 2rem;
-    padding: 0;
-    margin-bottom: 2rem;
-}
+    .hero-section {
+        flex-wrap: nowrap;
+        padding: $space-800;
+    }
 
-.hero-info button {
-    color: #fff; // change in variables
-    border: none; // change in variables
-    padding: 1rem 2.5rem;
-    border-radius: 30px;
-    font-family: $heading-font;
-    font-size: 1.5rem;
+    .hero-info {
+        text-align: left;
+        width: 40%;
+    }
+
+    .hero-info h1 {
+        line-height: 4.5rem; // differs from usual line-height
+    }
+
+    .hero-image {
+        width: 60%;
+    }
+
 }
