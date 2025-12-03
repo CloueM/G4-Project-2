@@ -1,104 +1,60 @@
-/* Map Section Container */
-#map-section,
-#map-section.framer-gRqcE,
-#map-section.framer-16j9v9n {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  padding: 60px 40px !important;
-  background-color: #f0f4f8 !important;
-  border-radius: 20px !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1) !important;
-  gap: 40px !important;
-  max-width: 1200px !important;
-  margin: 50px auto !important;
-  position: relative !important;
-}
+.map-section {
+  width: 100%;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
 
-/* Map Image */
-#map-section .map-image {
-  flex: 1 1 400px !important;
-  overflow: hidden;
+  .map-container {
+    width: 85%;
+    max-width: 1200px;
+    background: #ffffff;
+    border-radius: 28px;         // rounded rectangle like the image
+    padding: 60px 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
 
-  img {
-    width: 110% !important;         /* slight zoom */
-    height: auto !important;
-    transform: scale(1.1) !important;
-    border-radius: 16px !important;
-    object-fit: cover !important;
-    transition: transform 0.3s ease !important;
+    // soft outline (very light gray)
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
 
-    &:hover {
-      transform: scale(1.15) !important; /* optional hover zoom */
+  .map-image {
+    width: 500px;               // zoomed to match screenshot
+    height: auto;
+  }
+
+  .map-text-area {
+    max-width: 420px;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #2d2d2d;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #4f4f4f;
+    }
+
+    .view-btn {
+      padding: 12px 28px;
+      border-radius: 30px;         // rounded button exactly like image
+      background: #003d5d;         // dark blue like screenshot
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+        background: #002f46;
+      }
     }
   }
 }
-
-/* Text Section */
-#map-section .map-text {
-  flex: 1 1 500px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-
-  h2 {
-    font-family: 'Cormorant Garamond', serif !important;
-    font-size: 36px !important;
-    font-weight: 700 !important;
-    color: #050505 !important;
-    margin-bottom: 20px !important;
-  }
-
-  p {
-    font-family: 'Inter', sans-serif !important;
-    font-size: 18px !important;
-    line-height: 1.6 !important;
-    color: #2c2c2c !important;
-    margin-bottom: 25px !important;
-  }
-
-  a.button {
-    display: inline-block !important;
-    padding: 10px 24px !important;    /* smaller button */
-    font-size: 14px !important;       /* smaller text */
-    background-color: #2a58ad !important;
-    color: #fff !important;
-    border-radius: 12px !important;   /* rounded rectangle */
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    text-align: center !important;
-    transition: background 0.3s !important;
-
-    &:hover {
-      background-color: #2e6f9d !important;
-    }
-  }
-}
-
-/* Responsive for smaller screens */
-@media (max-width: 1024px) {
-  #map-section,
-  #map-section.framer-gRqcE,
-  #map-section.framer-16j9v9n {
-    flex-direction: column !important;
-    padding: 40px 20px !important;
-  }
-
-  #map-section .map-image,
-  #map-section .map-text {
-    flex: 1 1 100% !important;
-    text-align: center !important;
-  }
-
-  #map-section .map-text {
-    margin-top: 25px !important;
-    align-items: center !important;
-  }
-
-  #map-section .map-image img {
-    width: 100% !important;   /* reset zoom on mobile */
-    transform: scale(1) !important;
-  }
-}
-
