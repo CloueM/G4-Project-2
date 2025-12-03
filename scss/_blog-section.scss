@@ -4,37 +4,56 @@
 
 .blog-section {
     @include section-padding;
+}
+
+.blog-container {
     width: 90vw;
     margin: 0 auto;
 }
 
-.container-heading,
-.card-button {
+.blog-header,
+.blog-button {
     text-align: center;
-    padding-bottom: $space-600;
 }
 
-.card-button button {
+.blog-button button {
     @include button;
-    margin-top: $space-600;
+}
+
+.cards {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+}
+
+.card {
+    width: 22rem;
 }
 
 .card img {
     height: 11.25rem;
 }
 
+.card.hide {
+    display: none;
+}
+
 @media (min-width: $breakpoint) {
 
-    
-
     .cards {
-        @include flex-center;
-        flex-wrap: wrap;
-        gap: 3.5rem;
+        row-gap: 2rem;
     }
 
-    .card {
-        width: 22rem;
+    .card.hide {
+        display: block;
+    }
+
+    .blog-header {
+        padding-bottom: $space-700;
+    }
+
+    .blog-button {
+        padding-top: $space-700;
     }
 
 }
