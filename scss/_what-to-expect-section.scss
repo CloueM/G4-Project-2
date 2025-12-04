@@ -1,6 +1,7 @@
 @use 'variables' as *;
 @use 'typography' as *;
 @use 'mixins' as *;
+@use 'cards' as *;
 
 
 
@@ -18,4 +19,25 @@ padding: $space-500 $space-300;
 .container.is-open {
     background-color: $expect-background;
 }
+
+.expect-body{
+    @include flex-column-center;
+    gap: $space-200;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    //ROLL EFFECT
+    transition: 
+   max-height 0.45s ease,            
+      opacity 0.3s ease;
 }
+    
+//SHOWS THE BODY
+.container.is-open .expect-body{
+    max-height: $expect-body-max-height;
+    opacity: 1;
+}
+
+}
+
