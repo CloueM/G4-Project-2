@@ -1,0 +1,88 @@
+@use 'variables';
+@use 'typography';
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: variables.$space-200;
+    background-color: variables.$primary-background;
+    
+    .nav-left {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .nav-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        
+        .logo {
+            height: 80.59px;
+            width: auto;
+        }
+    }
+
+    .nav-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: variables.$space-200;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: typography.$link-color;
+                    font-family: typography.$body-font;
+                    font-weight: 500;
+                    
+                    &:hover {
+                        color: typography.$link-hover;
+                    }
+                }
+
+                &.desktop-only {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .hamburger-menu {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+// Desktop Styles
+@media (min-width: variables.$breakpoint) {
+    .navigation-bar {
+        padding: variables.$space-200 variables.$space-400;
+
+        .nav-right {
+            .nav-links {
+                gap: variables.$space-300;
+
+                li {
+                    &.desktop-only {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
