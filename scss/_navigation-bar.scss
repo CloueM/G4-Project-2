@@ -42,8 +42,9 @@
                 a {
                     text-decoration: none;
                     color: typography.$link-color;
-                    font-family: typography.$body-font;
-                    font-weight: 500;
+                    font-family: typography.$heading-font;
+                    font-weight: 900;
+                    font-size: 20px;
                     
                     &:hover {
                         color: typography.$link-hover;
