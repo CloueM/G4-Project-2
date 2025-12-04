@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+
+
+
+#expect-section {
+background-color: $secondary-background;
+padding: $space-500 $space-300;
+
+
+ .container{
+    background-color: $secondary-background;
+    
+}
+
+.container.is-open {
+    background-color: $expect-background;
+}
+}
