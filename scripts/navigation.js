@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function openMenu() {
         sideMenu.classList.add('open');
         overlay.classList.add('open');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
         sideMenu.classList.remove('open');
         overlay.classList.remove('open');
-        document.body.style.overflow = ''; // Restore scrolling
+        document.body.style.overflow = '';
     }
 
     if (hamburgerBtn) {
