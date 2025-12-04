@@ -16,7 +16,7 @@
 }
 
 
-@media (min-width: $breakpoint) {
+@media (max-width: $breakpoint) {
 
     .hero-section {
         flex-wrap: nowrap;
@@ -34,6 +34,15 @@
 
     .hero-image {
         width: 60%;
+    }
+
+    .hero-info h1 {
+        margin-bottom: 0;
+    }
+
+    .hero-info h4 {
+        padding: 0;
+        margin-bottom: 2rem;
     }
 
 }
