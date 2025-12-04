@@ -99,21 +99,25 @@
 .side-menu {
     position: fixed;
     top: 0;
-    left: -100%;
+    left: 0;
     width: 100%; 
     max-width: 25rem; 
-    height: 100vh;
+    height: 100%;
     background-color: variables.$secondary-background;
     z-index: 1000;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
     
-
-    transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
     &.open {
-        left: 0;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
     }
 
     .menu-header {
@@ -202,7 +206,7 @@
         img {
             width: 311px;
             height: 596px;
-            display: block;
+            display: none;
         }
     }
 }
@@ -227,5 +231,11 @@
     
     .side-menu {
         max-width: 800px;
+
+        .menu-footer-image {
+            img {
+                display: block;
+            }
+        }
     }
 }
