@@ -1,2 +1,223 @@
-/* Let's use variables for the spacing and colors */
 @use 'variables';
+@use 'typography';
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: variables.$space-200;
+    background-color: variables.$primary-background;
+    
+    .nav-left {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .nav-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        
+        .logo {
+            height: 80.59px;
+            width: auto;
+        }
+    }
+
+    .nav-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: variables.$space-200;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+
+            li {
+                a {
+                    text-decoration: none;
+                    color: typography.$link-color;
+                    font-family: typography.$heading-font;
+                    font-weight: 900;
+                    font-size: 20px;
+                    
+                    &:hover {
+                        color: typography.$link-hover;
+                    }
+                }
+
+                &.desktop-only {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .hamburger-menu {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+// Side Menu Styles
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+
+    &.open {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%; 
+    max-width: 25rem; 
+    height: 100vh;
+    background-color: variables.$secondary-background;
+    z-index: 1000;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    
+
+    transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    &.open {
+        left: 0;
+    }
+
+    .menu-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px;
+        
+        .close-menu {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .menu-cta {
+            background-color: variables.$button-background;
+            color: variables.$primary-background; 
+            border: none;
+            width: 181.42px;
+            height: 56px;
+            padding: 0 40px; 
+            border-radius: 2rem;
+            font-family: typography.$button-font;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: variables.$button-hover;
+            }
+        }
+    }
+
+    .menu-content {
+        padding: 0 40px;
+        flex: 1;
+        position: relative;
+        z-index: 2;
+
+        .menu-section {
+            margin-bottom: variables.$space-400;
+
+            h3 {
+                font-family: typography.$body-font;
+                font-size: 0.8rem;
+                font-weight: 700;
+                color: variables.$button-background;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                margin-bottom: variables.$space-200;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    margin-bottom: variables.$space-100;
+
+                    a {
+                        text-decoration: none;
+                        font-family: typography.$heading-font;
+                        font-size: 2rem; 
+                        color: typography.$link-color;
+                        
+                        &:hover {
+                            color: typography.$link-hover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-footer-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+        pointer-events: none;
+
+        img {
+            width: 311px;
+            height: 596px;
+            display: block;
+        }
+    }
+}
+
+// Desktop Styles
+@media (min-width: variables.$breakpoint) {
+    .navigation-bar {
+        padding: variables.$space-200 variables.$space-400;
+
+        .nav-right {
+            .nav-links {
+                gap: variables.$space-300;
+
+                li {
+                    &.desktop-only {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    
+    .side-menu {
+        max-width: 800px;
+    }
+}
