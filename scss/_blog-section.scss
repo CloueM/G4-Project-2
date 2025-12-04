@@ -38,7 +38,7 @@
     display: none;
 }
 
-@media (min-width: $breakpoint) {
+@media (max-width: $breakpoint) {
 
     .cards {
         row-gap: 2rem;
