@@ -19,6 +19,7 @@ $expect-background: #faf2e8; // what to expect
 $reviews-background: #f6fae7; // reviews
 $button-background: #0a4a73;
 $button-hover: #2C6D96;
+$border-color: #d4d4d4;
 
 /* Spaces */ 
 $space-100: .5rem;
@@ -32,3 +33,6 @@ $space-800: 7.5rem;
 
 /* Media Query */ 
 $breakpoint: 50rem;
+
+/* Border Radius */ 
+$video-border: 2rem;
