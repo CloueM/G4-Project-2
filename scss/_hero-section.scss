@@ -1,0 +1,48 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+.hero-section {
+    @include section-padding;
+    @include flex-start;
+    flex-wrap: wrap;
+    background-color: $hero-background; // for browsers that don't support gradient
+    background-image: linear-gradient(to bottom, $hero-background, $primary-background);
+    padding: 0 $space-100;
+}
+
+.hero-info {
+    text-align: center;
+}
+
+
+@media (max-width: $breakpoint) {
+
+    .hero-section {
+        flex-wrap: nowrap;
+        padding: $space-800;
+    }
+
+    .hero-info {
+        text-align: left;
+        width: 40%;
+    }
+
+    .hero-info h1 {
+        line-height: 4.5rem; // differs from usual line-height
+    }
+
+    .hero-image {
+        width: 60%;
+    }
+
+    .hero-info h1 {
+        margin-bottom: 0;
+    }
+
+    .hero-info h4 {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+}

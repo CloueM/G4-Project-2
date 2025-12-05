@@ -48,7 +48,7 @@ a {
 
 }
 
-@media (min-width: $breakpoint) {
+@media (max-width: $breakpoint) {
 
     a:hover {
         color: $link-hover;

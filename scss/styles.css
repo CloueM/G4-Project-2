@@ -1,0 +1,729 @@
+/*
+
+Only add "@use 'partial-style';" 
+Call partials here
+
+*/
+/* no need to import variables.scss here */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none;
+}
+
+/* Box Sizing Reset */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Responsive Media Elements */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 
+
+This is where we can style our Fonts:
+    - Font sizes
+    - Font weights
+    - Font colors
+    - Font families
+    - etc...
+
+*/
+/* Let's use colors, and spaces for the font sizes here */
+/* 
+Our Variables goes here.
+
+Let's put the colors, fonts, and spaces here
+and we use the those variables for our styles. 
+
+Let's avoid Hard coded colors, fonts, and size.
+It's just a way for having clean code and consistency
+for the styles.
+*/
+/* Background Colors */
+/* Buttons */
+/* Spaces */
+/* Media Query */
+/* 
+
+This is where we can style our Fonts:
+    - Font sizes
+    - Font weights
+    - Font colors
+    - Font families
+    - etc...
+
+*/
+/* Let's use colors, and spaces for the font sizes here */
+/* Let's use variables for the spacing and colors */
+body {
+  background-color: #ffffff;
+  font-family: "Inter", sans-serif;
+  color: #2e3133;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+h1 {
+  font-family: "Cormorant Garamond", sans-serif;
+  line-height: 3.4375rem;
+  font-size: 2rem;
+  color: #0a4a73;
+}
+
+h2, h3, h4 {
+  line-height: 1.5rem;
+  color: #0a4a73;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.6875rem;
+}
+
+h4 {
+  font-size: 1.4375rem;
+}
+
+button {
+  background-color: #0a4a73;
+  color: #0a4a73;
+  text-decoration: none;
+}
+
+a {
+  color: #0a4a73;
+  text-decoration: none;
+}
+
+@media (min-width: 50rem) {
+  button:hover {
+    background-color: #2C6D96;
+  }
+  a:hover {
+    color: #2C6D96;
+  }
+  h1 {
+    font-size: 3.125rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.6875rem;
+  }
+  h4 {
+    font-size: 1.4375rem;
+  }
+}
+/* 
+
+This is where we can style our Fonts:
+    - Font sizes
+    - Font weights
+    - Font colors
+    - Font families
+    - etc...
+
+*/
+/* Let's use colors, and spaces for the font sizes here */
+/* Let's use variables for the spacing and colors */
+/* 
+
+This is where we can style our Fonts:
+    - Font sizes
+    - Font weights
+    - Font colors
+    - Font families
+    - etc...
+
+*/
+/* Let's use colors, and spaces for the font sizes here */
+/* Let's use variables for the spacing and colors */
+/*sections*/
+/* 
+
+This is where we can style our Fonts:
+    - Font sizes
+    - Font weights
+    - Font colors
+    - Font families
+    - etc...
+
+*/
+/* Let's use colors, and spaces for the font sizes here */
+/* 
+
+This is where we can style our Fonts:
+    - Font sizes
+    - Font weights
+    - Font colors
+    - Font families
+    - etc...
+
+*/
+/* Let's use colors, and spaces for the font sizes here */
+.hero-section {
+  padding: 4.6875rem 0;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  gap: 1.5rem;
+  background-color: #F2F7D7;
+  background-image: linear-gradient(to bottom, #F2F7D7, #ffffff);
+  padding: 7rem 7rem;
+}
+
+.hero-info {
+  width: 40%;
+  padding-top: 1rem;
+}
+
+.hero-image {
+  width: 60%;
+}
+
+.hero-info h1 {
+  font-size: 6rem;
+  font-weight: 400;
+  font-family: "Cormorant Garamond", sans-serif;
+  line-height: 5rem;
+  margin-bottom: 0;
+}
+
+.hero-info h4 {
+  font-size: 2rem;
+  font-weight: 500;
+  font-family: "Cormorant Garamond", sans-serif;
+  line-height: 2rem;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.hero-info button {
+  color: #fff;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 1.5rem;
+}
+
+/* 
+
+This is where we can style our Fonts:
+    - Font sizes
+    - Font weights
+    - Font colors
+    - Font families
+    - etc...
+
+*/
+/* Let's use colors, and spaces for the font sizes here */
+.video-section {
+  padding: 4.6875rem 0;
+  background-color: #F1F6D1;
+  max-width: 95%;
+  margin: 0 auto;
+  border-radius: 30px;
+  padding-top: 3rem;
+}
+
+.video-section h3 {
+  text-align: center;
+  font-weight: 400;
+  font-family: "Cormorant Garamond", sans-serif;
+  font-size: 2.5rem;
+  padding-bottom: 2rem;
+}
+
+.video {
+  width: 1150px;
+  height: 645px;
+  border-radius: 30px;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+}
+
+.section-map {
+  padding: 4rem 1rem;
+  background: #fff;
+}
+.section-map h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.section-map iframe {
+  width: 100%;
+  height: 400px;
+  border: 0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.section-map .map-text {
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) {
+  .section-map iframe {
+    height: 300px;
+  }
+}
+
+.section-fertility {
+  padding: 4rem 1rem;
+  background: #f9f9f9;
+}
+.section-fertility .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+.section-fertility .container .text {
+  flex: 1;
+}
+.section-fertility .container .text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.section-fertility .container .text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+.section-fertility .container .text button {
+  background: #0078d7;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.section-fertility .container .text button:hover {
+  background: rgb(0, 91.5348837209, 164);
+}
+.section-fertility .container .image {
+  flex: 1;
+}
+.section-fertility .container .image img {
+  width: 100%;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .section-fertility .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .section-fertility .container .text {
+    margin-bottom: 2rem;
+  }
+}
+
+.site-footer {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 3rem 1rem;
+}
+.site-footer .footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.site-footer .footer-top .footer-cta {
+  flex: 1;
+}
+.site-footer .footer-top .footer-cta h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.site-footer .footer-top .footer-cta button {
+  background: #0078d7;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.site-footer .footer-top .footer-links {
+  flex: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.site-footer .footer-top .footer-links .links-column h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.site-footer .footer-top .footer-links .links-column ul {
+  list-style: none;
+  padding: 0;
+}
+.site-footer .footer-top .footer-links .links-column ul li {
+  margin-bottom: 0.5rem;
+}
+.site-footer .footer-top .footer-links .links-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+.site-footer .footer-top .footer-links .links-column ul li a:hover {
+  text-decoration: underline;
+}
+.site-footer .footer-top .footer-links .contact-column .social-icons {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.site-footer .footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.site-footer .footer-bottom .footer-legal {
+  margin-top: 0.5rem;
+}
+.site-footer .footer-bottom .footer-legal a {
+  color: #ccc;
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
+.site-footer .footer-bottom .footer-legal a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .site-footer .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .site-footer .footer-top .footer-links {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

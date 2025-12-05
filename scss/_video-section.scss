@@ -1,0 +1,51 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
+
+.video-section {
+    background-color: $video-background;
+    width: 95vw;
+    margin: 0 auto;
+    border-radius: $video-border;
+    padding-top: $space-100;
+    padding-bottom: $space-100;
+}
+
+.video-section h3 {
+    text-align: center;
+}
+
+.video {
+    width: 95%;
+    margin: 0 auto;
+    height: 13rem;
+    overflow: hidden;
+    border-radius: 1rem; // differs from usual
+}
+
+.video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (min-width: $breakpoint) {
+
+    .video-section {
+        margin-top: 3rem;
+        padding-bottom: $space-700;
+    }
+
+    .video-section h3 {
+        padding: $space-200 0;
+    }
+
+    .video {
+        width: 70%;
+        height: 34rem;
+        overflow: hidden;
+        border-radius: $video-border;
+    }
+
+}
