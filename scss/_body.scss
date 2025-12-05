@@ -40,12 +40,12 @@ h4 {
 
 button {
     @include button;
+    cursor: pointer;
 }
 
 a {
     color: $link-color;
     text-decoration: none;
-
 }
 
 @media (max-width: $breakpoint) {
