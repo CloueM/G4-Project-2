@@ -5,30 +5,83 @@
 .hero-section {
     @include section-padding;
     @include flex-start;
+    flex-wrap: wrap;
     background-color: $hero-background; // for browsers that don't support gradient
     background-image: linear-gradient(to bottom, $hero-background, $primary-background);
-    padding: $space-800;
+    padding: $space-700 $space-100 0 $space-100;
 }
 
 .hero-info h1 {
-    margin-bottom: 0;
+    font-size: $hero-mobile-h1;
 }
 
 .hero-info h4 {
-    padding: 0;
-    margin-bottom: 2rem;
+    margin-top: $space-100 0 $space-400 0;
+}
+
+.hero-info,
+.hero-image {
+    text-align: center;
+    max-width: 28rem;
 }
 
 
-@media (min-width: $breakpoint) {
-    
+// hero section has three different breakpoints that differs from rest of website
+@media (min-width: 50em) {
+
+    .hero-section {
+        padding: $space-800 $space-100 0 $space-100;
+    }
+
+    .hero-info h1 {
+        font-size: $hero-mobile-h1-50;
+    }
+
+    .hero-info,
+    .hero-image {
+        max-width: 53rem;
+    }
+
+}
+
+
+@media (min-width: 75em) {
+
+    .hero-section {
+        flex-wrap: nowrap;
+        padding: calc($space-800 * 2) 0 $space-800 $space-400;
+    }
+
     .hero-info {
-    width: 40%;
-    padding-top: $space-200;
+        text-align: left;
+        width: 40%;
+        margin-top: $space-400;
+    }
+
+    .hero-info h1 {
+        line-height: $hero-desktop-line-height;
+        font-size: $desktop-h1-size;
     }
 
     .hero-image {
         width: 60%;
+    }
+
+    .hero-info h1 {
+        margin-bottom: 0;
+    }
+
+    .hero-info h4 {
+        padding: 0;
+        margin-bottom: $space-400;
+    }
+
+}
+
+@media (min-width: 80em) {
+
+    .hero-section {
+        padding: calc($space-800 * 2) $hero-desktop-padding $space-800 $hero-desktop-padding;
     }
 
 }
