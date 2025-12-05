@@ -1,6 +1,31 @@
 @use 'variables';
 @use 'typography';
 
+.notification-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 38px;
+    background-color: #004B87;
+    color: variables.$primary-background;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 variables.$space-200;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+
+    p {
+        margin: 0;
+        font-family: typography.$body-font;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+}
+
 .navigation-bar {
     display: flex;
     justify-content: space-between;
@@ -8,13 +33,14 @@
     padding: variables.$space-200;
     background-color: variables.$primary-background;
     position: fixed;
-    top: 0;
+    top: 38px;
     left: 0;
     width: 100%;
     height:110px;
     z-index: 100;
     box-sizing: border-box;
     border-bottom: 1px solid variables.$border-color;
+    transition: top 0.3s ease;
     
     .nav-left {
         flex: 1;
@@ -235,5 +261,16 @@
                 display: block;
             }
         }
+    }
+}
+
+// Scrolled State
+body.scrolled {
+    .notification-bar {
+        transform: translateY(-100%);
+    }
+
+    .navigation-bar {
+        top: 0;
     }
 }
