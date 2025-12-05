@@ -20,40 +20,63 @@
     @include button;
 }
 
-.cards {
-    @include flex-center;
-    flex-wrap: wrap;
-    gap: 3.5rem;
+.cards h3 {
+    font-size: $blog-mobile-heading;
+    line-height: $blog-heading-line-height;
+    margin: $space-100 0;
 }
 
 .card {
     width: 22rem;
+    padding-bottom: $space-400;
 }
 
 .card img {
     height: 11.25rem;
 }
 
-.card.hide {
+.cards {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+}
+
+.card.hide,
+.card.reveal {
     display: none;
 }
 
-@media (min-width: $breakpoint) {
+
+// blog section has two breakpoints that differs from the rest of the site
+@media (min-width: 50em) {
 
     .cards {
-        row-gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+        padding: $space-600 0;
+    }
+    
+    .card.reveal {
+        display: block;
     }
 
+}
+
+@media (min-width: 75rem) {
+
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        justify-items: center;
+    }
+    
     .card.hide {
         display: block;
     }
 
-    .blog-header {
-        padding-bottom: $space-700;
-    }
-
-    .blog-button {
-        padding-top: $space-700;
+    .blog-header h1 {
+        font-size: $blog-desktop-heading;
     }
 
 }
