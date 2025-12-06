@@ -80,4 +80,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         renderReview();
     });
+
+    setInterval(function (){
+        currentIndex = currentIndex +1;
+
+         if(currentIndex >= reviews.length) {
+            currentIndex = 0;
+
+    }
+    renderReview();
+}, 10000);
 });
