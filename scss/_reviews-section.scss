@@ -2,3 +2,38 @@
 @use 'typography' as *;
 @use 'mixins' as *;
 @use 'cards' as *;
+
+
+//variables for reviews will move later this is for testing//
+$reviews-img-height-mt: 14.75rem; //mt means MOBILE AND TABLET
+$reviews-img-width-desktop: 33.5rem;
+$reviews-img-height-desktop: 43.75rem;
+
+.reviews-section{
+    .reviews-container{
+        @include flex-column-center;
+        gap: $space-400;
+    }
+
+    img {
+        width:100%;
+        height: auto;
+        max-height: $reviews-img-height-mt;
+        object-fit: contain;
+    }
+}
+
+@media (min-width: $desktop-breakpoint) {
+ .reviews-section {
+
+    .reviews-container{
+        @include flex-row-center;
+        flex-direction: row-reverse;
+    }
+    
+    img {
+        max-width: $reviews-img-width-desktop;
+         max-height: $reviews-img-height-desktop;
+    }
+}
+}
