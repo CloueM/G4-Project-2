@@ -1,3 +1,6 @@
+
+//VALUES SECTION
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log("accordion is working!");
 
@@ -18,3 +21,31 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 }); 
+
+
+//REVIEWS SECTION
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const reviews = [
+        {
+            quote: "Super responsive, quick and easy delivery, and reasonable pricing. I had a great experience with Alto Pharmacy!",
+
+            client:"Jodi, Alto customer"
+        },
+        {
+            quote: "Very easy ordering process. Very quick responses to questions from customer service. Prompt and friendly delivery. Highly recommend!",
+
+            client:"Wendy, Alto customer"
+
+        },
+        {
+            quote: "I was extremely impressed with the ease of using the app, how quickly they processed my order, and the wonderful customer service. The caramel with my order was definitely an added bonus.!",
+
+            client:"Camille, Alto customer"
+        }
+    ];
+
+    console.log(reviews);
+});
