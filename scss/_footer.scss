@@ -9,6 +9,7 @@ footer {
 
   .footer-links {
     display: flex;
+    flex-wrap: wrap;
     gap: $space-400;
     margin-bottom: $space-400;
     
@@ -48,6 +49,7 @@ footer {
 
     .badges {
       display: flex;
+      flex-wrap: wrap;
       gap: $space-200;
 
       img {
@@ -58,14 +60,13 @@ footer {
   }
 }
 
-// Tablet/Desktop Adjustments
 @media (min-width: $breakpoint) {
     footer {
         padding: $space-400 6% 0 3%;
         
         .footer-links {
             gap: 60px;
-            margin-left: -20px; // Restore negative margin on larger screens if desired for alignment
+            margin-left: -20px;
         }
         
         .legal {
