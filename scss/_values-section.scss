@@ -12,15 +12,19 @@ h2 {
     margin-bottom: $space-400;
 }
 
+p{
+    font-family: $body-font;
+}
 
-.cards{
+
+.values-cards{
 @include flex-column-center;
 padding: 0 $value-card-padding;
 gap: $space-300;
 
   
 }
-.card{
+.values-card{
     @include flex-column-center;
     background-color: $primary-background;
     border: $value-card-border-width solid $value-card-border-color;
@@ -38,7 +42,7 @@ gap: $space-300;
         margin-top: $space-100;
      }
 }
-   .card img{
+   .values-card img{
     max-width: 100%;
     width: auto;
     max-height: $value-img;
@@ -50,33 +54,35 @@ gap: $space-300;
 @media (min-width: $breakpoint) {
     .values-section  {
 
-        .cards{
+        .values-cards{
 
            max-width: $tablet-card-max-width;
             margin: 0 auto;
+             width: 100%;
+           
+
         }
 
-        .card img {
+        .values-card img {
                 width: auto;
                 max-width: 100%;
                 max-height:$value-img;
                 object-fit:contain;
             }
 
-            width: 100%;
-            max-width: $tablet-card-max-width;
-
-            h3,
-            p {
+          
+          .values-card h3,
+          .values-card p {
                 margin: 0;
             }
 
-            h3{
+            .values-card h3{
                 margin-bottom: $space-300;
             }
-        
-
         }
+    }
+
+
 
     @media (min-width: $desktop-breakpoint){
         
@@ -84,7 +90,7 @@ gap: $space-300;
            max-width: $desktop-cards-max-width;
            margin: 0 auto;
 
-            .cards{
+            .values-cards{
                 @include flex-row-center;
                 max-width: $desktop-cards-max-width;
                 margin: 0 auto;
@@ -92,17 +98,18 @@ gap: $space-300;
                 
             }
 
-            .card {
+            .values-card {
                 width: $value-desktop-card-size;
                 height: $value-desktop-card-size;
                 overflow: hidden;
                 flex-shrink: 0;
+                text-align: left;
                
                 
             }
         }
     }
         
-    }
+    
 
 
