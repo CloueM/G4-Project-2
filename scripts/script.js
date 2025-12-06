@@ -70,4 +70,14 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         renderReview();
     });
+
+    prevButton.addEventListener("click", function () {
+        currentIndex = currentIndex - 1;
+
+        if(currentIndex < 0) {
+            currentIndex = reviews.length - 1;
+        }
+
+        renderReview();
+    });
 });
