@@ -47,5 +47,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     ];
 
-    console.log(reviews);
+    const quoteText = document.querySelector(".reviews-quote");
+    const clientText = document.querySelector(".reviews-client");
+    const prevButton = document.querySelector(".reviews-btn--prev");
+    const nextButton = document.querySelector(".reviews-btn--next");
+
+console.log(quoteText, clientText, prevButton, nextButton);
+    
 });
