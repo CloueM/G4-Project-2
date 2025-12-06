@@ -52,6 +52,22 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevButton = document.querySelector(".reviews-btn--prev");
     const nextButton = document.querySelector(".reviews-btn--next");
 
-console.log(quoteText, clientText, prevButton, nextButton);
-    
+    let currentIndex = 0;
+
+    function renderReview () {
+        quoteText.textContent = reviews[currentIndex].quote;
+        clientText.textContent = reviews[currentIndex].client;
+    }
+    renderReview();
+
+    //BUTTONS
+
+    nextButton.addEventListener("click", function () {
+        currentIndex = currentIndex + 1;
+
+        if(currentIndex >= reviews.length) {
+            currentIndex = 0;
+        }
+        renderReview();
+    });
 });
