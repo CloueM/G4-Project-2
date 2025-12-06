@@ -3,14 +3,12 @@
 @use 'mixins' as *;
 
 .map-section {
-  width: 100%;
   @include section-padding;
   display: flex;
   justify-content: center;
 
   .map-container {
     width: 90%;
-    max-width: 1200px;
     background: $primary-background;
     border-radius: 28px;
     padding: $space-500 $space-300;
@@ -36,7 +34,6 @@
   }
 
   .map-text-area {
-    width: 100%;
     text-align: center;
 
     h2 {
@@ -74,7 +71,6 @@
 @media (min-width: $breakpoint) {
     .map-section {
         .map-container {
-            width: 85%;
             padding: 60px 70px;
             flex-direction: row;
             justify-content: space-between;
