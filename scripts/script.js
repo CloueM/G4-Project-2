@@ -1,3 +1,6 @@
+
+//VALUES SECTION
+
 document.addEventListener("DOMContentLoaded", function() {
     console.log("accordion is working!");
 
@@ -18,3 +21,73 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 }); 
+
+
+//REVIEWS SECTION
+
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    const reviews = [
+        {
+            quote: "Super responsive, quick and easy delivery, and reasonable pricing. I had a great experience with Alto Pharmacy!",
+
+            client:"Jodi, Alto customer"
+        },
+        {
+            quote: "Very easy ordering process. Very quick responses to questions from customer service. Prompt and friendly delivery. Highly recommend!",
+
+            client:"Wendy, Alto customer"
+
+        },
+        {
+            quote: "I was extremely impressed with the ease of using the app, how quickly they processed my order, and the wonderful customer service. The caramel with my order was definitely an added bonus.!",
+
+            client:"Camille, Alto customer"
+        }
+    ];
+
+    const quoteText = document.querySelector(".reviews-quote");
+    const clientText = document.querySelector(".reviews-client");
+    const prevButton = document.querySelector(".reviews-btn--prev");
+    const nextButton = document.querySelector(".reviews-btn--next");
+
+    let currentIndex = 0;
+
+    function renderReview () {
+        quoteText.textContent = reviews[currentIndex].quote;
+        clientText.textContent = reviews[currentIndex].client;
+    }
+    renderReview();
+
+    //BUTTONS
+
+    nextButton.addEventListener("click", function () {
+        currentIndex = currentIndex + 1;
+
+        if(currentIndex >= reviews.length) {
+            currentIndex = 0;
+        }
+        renderReview();
+    });
+
+    prevButton.addEventListener("click", function () {
+        currentIndex = currentIndex - 1;
+
+        if(currentIndex < 0) {
+            currentIndex = reviews.length - 1;
+        }
+
+        renderReview();
+    });
+
+    setInterval(function (){
+        currentIndex = currentIndex +1;
+
+         if(currentIndex >= reviews.length) {
+            currentIndex = 0;
+
+    }
+    renderReview();
+}, 10000); //QUOTE CHANGES EVERY 10 SECS
+});
