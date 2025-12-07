@@ -7,13 +7,22 @@
 
 
 #expect-section {
-background-color: $secondary-background;
-padding: $space-500 $space-300;
+    background-color: $secondary-background;
+    padding: $space-500 $space-300;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $space-900 $space-600;
 
 
  .container{
     background-color: $secondary-background;
-    
+    padding: $space-200;
+    border-radius: $space-200;
+    width: 100%;
+    h3 {
+        margin: $space-100 0;
+    }
 }
 
 .container.is-open {
@@ -29,8 +38,8 @@ padding: $space-500 $space-300;
 
     //ROLL EFFECT
     transition: 
-   max-height 0.45s ease,            
-      opacity 0.3s ease;
+    max-height 0.45s ease,            
+    opacity 0.3s ease;
 }
     
 //SHOWS THE BODY
