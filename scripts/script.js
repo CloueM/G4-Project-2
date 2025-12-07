@@ -1,5 +1,5 @@
 
-//VALUES SECTION
+// WHAT TO EXPECT
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log("accordion is working!");
