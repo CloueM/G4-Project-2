@@ -89,5 +89,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     }
     renderReview();
-}, 10000);
+}, 10000); //QUOTE CHANGES EVERY 10 SECS
 });

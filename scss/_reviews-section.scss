@@ -8,11 +8,54 @@
 $reviews-img-height-mt: 14.75rem; //mt means MOBILE AND TABLET
 $reviews-img-width-desktop: 33.5rem;
 $reviews-img-height-desktop: 43.75rem;
+$body-font-client: 0.8rem;
+
+
+
+
+//BUTTONS COLORS
+$reviews-btn-bg: #ebf0f5;
+$reviews-btn-fg: #0a4a73;
+$review-btn-wh: 2.5rem; //width and height of button 
 
 .reviews-section{
+    background-color: $reviews-background;
+    padding: $space-100;
+    
+
     .reviews-container{
         @include flex-column-center;
         gap: $space-400;
+        text-align:center;
+    }
+    
+    h2{
+        font-size: $mobile-h3-size;
+        margin-bottom: $space-200;
+        
+
+    }
+
+    h3{
+        font-size: $mobile-h4-size;
+        padding: 1rem;
+    }
+
+    p{  
+        font-size: $body-size;
+        font-family:$body-font;
+        margin-top: $space-400;
+        padding: $space-300;
+        
+    }
+    .reviews-sub {
+        text-transform: uppercase;
+        color: $heading-color;
+
+    }
+
+    .reviews-client{
+        font-size:$body-font-client;
     }
 
     img {
@@ -21,16 +64,48 @@ $reviews-img-height-desktop: 43.75rem;
         max-height: $reviews-img-height-mt;
         object-fit: contain;
     }
+
+    .reviews-controls {
+        display: flex;
+        gap: $space-200;
+         justify-content: center;
+        width: 100%;
+    }
+
+    .reviews-btn{
+        background-color: $reviews-btn-bg;
+        color: $reviews-btn-fg;
+        width: $review-btn-wh;
+        height:$review-btn-wh;
+        border-radius: 50%;
+
+        padding: 0;
+        min-width: 0;
+        min-height: 0;
+        box-sizing: border-box;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+
+      
+    
+    }
 }
 
 @media (min-width: $desktop-breakpoint) {
  .reviews-section {
+    padding: $space-800;
 
     .reviews-container{
         @include flex-row-center;
         flex-direction: row-reverse;
     }
-    
+        h2{
+           font-size: $desktop-h2-size;
+        }
+
     img {
         max-width: $reviews-img-width-desktop;
          max-height: $reviews-img-height-desktop;
