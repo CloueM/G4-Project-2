@@ -1,7 +1,7 @@
 @use 'variables' as *;
 @use 'typography' as *;
 @use 'mixins' as *;
-
+@use 'cards' as *;
 #map-section {
   display: flex;
   justify-content: center;
@@ -9,20 +9,14 @@
   padding: 20px;
   border-radius: $space-200;
   border: 1px solid $button-hover;
-  margin: $space-200;
+  margin: $space-200 auto;
   text-align: center;
-
+max-width: $desktop-cards-max-width;
+  
   img{
     height:170px;
   }
 }
-
-.map-text {
-    text-align: center;
-    h1 {
-      
-    }
-  }
 
 // Desktop Styles
 @media (min-width: $breakpoint) {
