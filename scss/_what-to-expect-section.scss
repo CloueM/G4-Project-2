@@ -76,10 +76,11 @@
     width: 50%; }
     
     .expect-img-right img {
-        width: 100%;
+        width: 60%;
         height: auto;
         border-radius: $space-200;
         display:block;
+        max-width: $expect-img-desktop;
      }
        .expect-body img{
         display: none;
