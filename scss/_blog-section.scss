@@ -27,8 +27,10 @@
 }
 
 .card {
-    width: 22rem;
+    width: 100%;
+    max-width: 22rem;
     padding-bottom: $space-400;
+    margin: 0 auto;
 }
 
 .card img {

@@ -1,60 +1,101 @@
+@use 'variables' as *;
+@use 'typography' as *;
+@use 'mixins' as *;
+
 .map-section {
   width: 100%;
-  padding: 80px 0;
+  @include section-padding;
   display: flex;
   justify-content: center;
 
   .map-container {
-    width: 85%;
-    max-width: 1200px;
-    background: #ffffff;
-    border-radius: 28px;         // rounded rectangle like the image
-    padding: 60px 70px;
+    width: 100%;
+    background: $primary-background;
+    border-radius: 28px;
+    padding: $space-500 $space-300;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
+    justify-content: center;
+    gap: $space-400;
 
-    // soft outline (very light gray)
     border: 1px solid #e6e6e6;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
   .map-image {
-    width: 500px;               // zoomed to match screenshot
+    width: 100%;
     height: auto;
+    
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: $space-200;
+    }
   }
 
   .map-text-area {
-    max-width: 420px;
+    width: 100%;
+    text-align: center;
 
     h2 {
-      font-size: 32px;
+      font-family: $heading-font;
+      font-size: $mobile-h2-size;
       font-weight: 600;
-      margin-bottom: 15px;
+      margin-bottom: $space-200;
       color: #2d2d2d;
     }
 
     p {
-      font-size: 16px;
+      font-family: $body-font;
+      font-size: 1rem;
       line-height: 1.6;
-      margin-bottom: 30px;
+      margin-bottom: $space-400;
       color: #4f4f4f;
     }
 
     .view-btn {
-      padding: 12px 28px;
-      border-radius: 30px;         // rounded button exactly like image
-      background: #003d5d;         // dark blue like screenshot
-      color: white;
-      border: none;
+      @include button;
       font-size: 16px;
       cursor: pointer;
       transition: 0.2s ease-in-out;
+      display: inline-block; 
+      text-decoration: none;
 
       &:hover {
-        background: #002f46;
+        background: $button-hover;
       }
     }
   }
+}
+
+// Desktop Styles
+@media (min-width: $breakpoint) {
+    .map-section {
+        .map-container {
+            width: 100%;
+            padding: 60px 70px;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .map-text-area {
+            max-width: 420px;
+            text-align: left;
+
+            h2 {
+                font-size: 32px;
+            }
+        }
+
+        .map-image {
+            width: 500px;
+            
+            img {
+                border-radius: 0; // Reset if needed, or keep consistent
+            }
+        }
+    }
 }
