@@ -3,7 +3,7 @@
 @use 'mixins' as *;
 
 .cta-section {
-    background: linear-gradient(to bottom, $secondary-background, $primary-background);
+    background: $secondary-background;
     padding: $space-800 0;
     text-align: center;
     display: flex;
@@ -14,7 +14,7 @@
 
     h2 {
         font-family: $heading-font;
-        font-weight: 900;
+        font-weight: 500;
         color: $button-background;
         line-height: 1.2;
         margin: 0;
