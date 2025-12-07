@@ -22,6 +22,35 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 }); 
 
+document.addEventListener("DOMContentLoaded", function() {
+    const section = document.getElementById("expect-section-desktop");
+    if (!section) return;
+
+    const containers = section.querySelectorAll(".container");
+    const rightImg = document.getElementById("expect-pic-right");
+
+    containers.forEach(function (container) {
+            const header = container.querySelector(".expect-header");
+            if (!header) return;
+
+    header.addEventListener("click", function() {
+        containers.forEach(function (c) {
+            c.classList.remove("is-open");
+        });
+
+        container.classList.add("is-open"); 
+
+        const clickedImage = container.querySelector(".expect-body img");
+        if (rightImg && clickedImage){
+            rightImg.src = clickedImage.src;
+            rightImg.alt = clickedImage.alt || rightImg.alt; 
+        }
+    });
+    });
+    });
+    
+
+
 
 //REVIEWS SECTION
 
