@@ -6,7 +6,8 @@
 
 
 
-#expect-section {
+#expect-section,
+#expect-section-desktop {
     background-color: $secondary-background;
     padding: $space-500;
     display: flex;
@@ -45,7 +46,44 @@
 .container.is-open .expect-body{
     max-height: $expect-body-max-height;
     opacity: 1;
+
+    }
 }
 
+#expect-section-desktop {
+    display: none;
 }
 
+@media (min-width: $breakpoint) {
+
+    #expect-section {
+        display: none;
+    }
+
+
+#expect-section-desktop {
+    display: block;
+
+    .expect-layout{
+        width: 100%;
+        display: flex;
+        gap: $space-500;
+        align-items: flex-start;
+    }
+
+    .expect-left,
+    .expect-img-right {
+    width: 50%; }
+    
+    .expect-img-right img {
+        width: 60%;
+        height: auto;
+        border-radius: $space-200;
+        display:block;
+        max-width: $expect-img-desktop;
+     }
+       .expect-body img{
+        display: none;
+       } 
+    }
+}
