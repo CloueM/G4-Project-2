@@ -1,6 +1,7 @@
 @use 'variables' as *;
 @use 'typography' as *;
 @use 'mixins' as *;
+@use 'cards' as *;
 
 .blog-section {
     @include section-padding;
@@ -45,6 +46,8 @@
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     justify-content: center;
+    margin: 0 auto;
+    max-width: $desktop-cards-max-width;
 }
 
 .card.hide,
@@ -54,7 +57,7 @@
 
 
 // blog section has two breakpoints that differs from the rest of the site
-@media (min-width: 50em) {
+@media (min-width: $breakpoint) {
 
     .cards {
         grid-template-columns: repeat(2, 1fr);
@@ -69,7 +72,7 @@
 
 }
 
-@media (min-width: 75rem) {
+@media (min-width: 75em) {
 
     .cards {
         grid-template-columns: repeat(3, 1fr);
