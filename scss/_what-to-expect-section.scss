@@ -64,12 +64,18 @@
 
 #expect-section-desktop {
     display: block;
-
     .expect-layout{
         width: 100%;
         display: flex;
         gap: $space-500;
         align-items: flex-start;
+        max-width: $desktop-cards-max-width;
+        margin: 0 auto;
+    }
+
+    h2 {
+        max-width: $desktop-cards-max-width;
+        margin: $space-500 auto;
     }
 
     .expect-left,
