@@ -1,4 +1,4 @@
-
+@use 'cards' as *;
 @use 'mixins' as *; 
 @use 'variables' as *;
 @use 'typography' as *;
@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 80px 23rem;
+  max-height: $desktop-cards-max-width;
   background-color: #fff; // White background like Alto
   gap: 40px;
 
@@ -55,7 +55,7 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (min-width: $breakpoint) {
     flex-direction: column;
     padding: 60px 5%;
     .content, .image {
