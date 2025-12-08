@@ -8,34 +8,22 @@
     display: flex;
     justify-content: center;
     background-color: $primary-background;
-    margin: $space-600 0; // Consistent section spacing
+    margin: $space-600 0;
 
     .fertility-container {
-        @include container; // Enforces max-width: 1440px
+        @include container;
         width: 100%;
         display: flex;
-        flex-direction: column-reverse; // Image on top for mobile usually, or bottom? Design implies side-by-side. 
-        // If typically text then image, stack is text then image. 
-        // Let's stick to standard flex column for mobile.
+        flex-direction: column-reverse;
         flex-direction: column;
         align-items: center;
         text-align: center;
         
-        // Mobile Padding (matching Map Section)
+            
         padding: 20px;
         gap: $space-400;
 
-        // Optional: Border styling if consistent with Map/Video sections
-        // user asked for same "padding/margin", didn't explicitly ask for border but said "previous ones".
-        // Map has border. Video has border. Safe to assume this "floating card" style is the theme.
-        // However, user said "same padding/margin", I will stick to that first. 
-        // If layout looks like a card, I'll add border. The provided Alto image shows full width background or container?
-        // Actually, previous sections (Hero, Value) are containers. Video/Map are floating.
-        // I will stick to the spacing requests first.
-        // Map section had: margin: $space-200 auto; border...
-        // Let's check if "About Fertility" is a "Card" or a "Section".
-        // In the design (if recalled correctly) it might be a split section.
-        // Safest bet: Implement container constraints + proper padding.
+
     }
 
     .content {
@@ -84,7 +72,7 @@
     }
 }
 
-// Tablet/Desktop
+
 @media (min-width: $breakpoint) {
     #fertility-section {
         .fertility-container {
@@ -93,7 +81,6 @@
             justify-content: space-between;
             text-align: left;
             
-            // Desktop Padding (matching Map Section)
             padding: 50px;
             gap: $space-600;
         }
@@ -103,17 +90,17 @@
             align-items: flex-start;
             display: flex;
             flex-direction: column;
-            padding-right: $space-400; // Visual gap
+            padding-right: $space-400;
         }
 
         .image {
             flex: 1;
             display: flex;
-            justify-content: flex-end; // Image on right
+            justify-content: flex-end;
 
             img {
                 width: 100%; 
-                max-width: 600px; // Prevent massive images
+                max-width: 600px;
             }
         }
     }

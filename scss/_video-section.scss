@@ -5,15 +5,14 @@
 .video-section {
     background-color: $video-background;
     padding: $space-500 $space-200;
-    margin: $space-600 auto; // Vertical spacing and centered
-    width: calc(100% - #{$space-400}); // Leave specific gap on sides
-    max-width: 90rem; // 1440px max width
-    border-radius: $video-border; // Rounded corners
+    margin: $space-600 auto;
+    width: calc(100% - #{$space-400});
+    max-width: 90rem;
+    border-radius: $video-border;
 }
 
 .video-container {
-    // Container mixin not strictly needed for width anymore since section has max-width
-    // but good for flex behavior
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +23,7 @@
     text-align: center;
     color: $heading-color;
     margin-bottom: $space-400;
-    max-width: 40rem; // Limit text width for readability
+    max-width: 40rem;
     line-height: $subheading-line-height;
     font-weight: $subheading-weight;
     font-family: $heading-font;
@@ -33,12 +32,12 @@
 .video {
     position: relative;
     width: 100%;
-    // 16:9 Aspect Ratio
+
     padding-top: 56.25%; 
     height: 0;
     overflow: hidden;
     border-radius: $video-border;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); // Optional: adds slight depth like the image
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .video iframe {
@@ -53,7 +52,7 @@
 @media (min-width: $breakpoint-tablet) {
     .video-section {
         padding: $space-600 $space-400;
-        margin-top: $space-800; // More separation on desktop
+        margin-top: $space-800;
         margin-bottom: $space-800;
     }
 
