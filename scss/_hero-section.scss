@@ -31,8 +31,7 @@
 }
 
 
-// hero section has three different breakpoints that differs from rest of website
-@media (min-width: 50em) {
+@media (min-width: $breakpoint-tablet) {
 
     .hero-section {
         padding-top: $space-500;
@@ -50,7 +49,7 @@
 }
 
 
-@media (min-width: 75em) {
+@media (min-width: $breakpoint-desktop) {
 
     .hero-container {
         flex-wrap: nowrap;
@@ -80,9 +79,8 @@
 
 }
 
-@media (min-width: 80em) {
-    // Container handles max-width, minimal overrides needed
+@media (min-width: $breakpoint-desktop-large) {
     .hero-container {
-        padding: 0 $space-400; // Add some internal padding if needed
+        padding: 0 $space-400;
     }
 }

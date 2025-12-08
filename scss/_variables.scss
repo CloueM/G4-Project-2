@@ -1,22 +1,10 @@
-/* 
-Our Variables goes here.
-
-Let's put the colors, fonts, and spaces here
-and we use the those variables for our styles. 
-
-Let's avoid Hard coded colors, fonts, and size.
-It's just a way for having clean code and consistency
-for the styles.
-*/
-
-
 /* Background Colors */
 $primary-background: #ffffff;
-$secondary-background: #fffaf4; // what to expect, footer, toggled navigation
-$hero-background: #FDFBE6; // hero - updated to warm cream
-$video-background: #F1F6D1; // video
-$expect-background: #faf2e8; // what to expect
-$reviews-background: #f6fae7; // reviews
+$secondary-background: #fffaf4;
+$hero-background: #FDFBE6;
+$video-background: #F1F6D1;
+$expect-background: #faf2e8;
+$reviews-background: #f6fae7;
 $button-background: #0a4a73;
 $button-hover: #2C6D96;
 $border-color: #d4d4d4;
@@ -34,6 +22,9 @@ $space-900: 9rem;
 
 /* Media Query */ 
 $breakpoint: 50rem;
+$breakpoint-tablet: 50rem;
+$breakpoint-desktop: 75rem;
+$breakpoint-desktop-large: 80rem;
 $desktop-breakpoint: 120rem;
 
 /* Border Radius */ 
