@@ -74,3 +74,29 @@ footer {
         }
     }
 }
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 100%;
+}
+
+.footer-links .social-icons {
+    margin-left: auto;
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.footer-links .social-icons img {
+    width: 22px;
+    height: 22px;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.footer-links .social-icons img:hover {
+    opacity: 1;
+}

@@ -2,28 +2,40 @@
 @use 'typography' as *;
 @use 'mixins' as *;
 @use 'cards' as *;
+
 #map-section {
   display: flex;
+  flex-direction: column;   // mobile default
+  align-items: center;
   justify-content: center;
-  flex-direction: column;
   padding: 20px;
   border-radius: $space-200;
   border: 1px solid $button-hover;
   margin: $space-200 auto;
   text-align: center;
-max-width: $desktop-cards-max-width;
-  
-  img{
-    height:170px;
+  max-width: $desktop-cards-max-width;
+  gap: 20px;
+
+  .map-image img {
+    height: 170px;
   }
 }
 
-// Desktop Styles
+/* -------- DESKTOP STYLES -------- */
 @media (min-width: $breakpoint) {
   #map-section {
-    img{
-      height:auto;
-      width:530px;
+    flex-direction: row;       // ⭐ THIS makes image left & text right
+    text-align: left;
+    align-items: center;
+    gap: 40px;
+
+    .map-image img {
+      height: auto;
+      width: 530px;
+    }
+
+    .map-text {
+      max-width: 450px;
     }
   }
 }
