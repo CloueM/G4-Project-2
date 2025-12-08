@@ -3,7 +3,7 @@
 @use 'mixins' as *;
 
 .cta-section {
-    background: $secondary-background;
+    background: linear-gradient(180deg, $secondary-background, $primary-background);
     padding: $space-800 0;
     text-align: center;
     display: flex;
