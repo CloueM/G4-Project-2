@@ -21,13 +21,12 @@
             margin: $space-100 0;
             cursor: pointer;
         }
+
+        &.is-open {
+            background-color: $expect-background;
+        }
     }
 }
-
-.container.is-open {
-    background-color: $expect-background;
-}
-
 .expect-body {
     @include flex-column-center;
     gap: $space-200;
