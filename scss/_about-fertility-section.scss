@@ -3,65 +3,118 @@
 @use 'variables' as *;
 @use 'typography' as *;
 
-// Use variables and mixins
-
 #fertility-section {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  max-height: $desktop-cards-max-width;
-  background-color: #fff; // White background like Alto
-  gap: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $primary-background;
+    margin: $space-600 0; // Consistent section spacing
 
-  .content {
-    flex: 1 1 500px;
-    h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 36px;
-      font-weight: 700;
-      color: #050505;
-      margin-bottom: 20px;
-    }
-    p {
-      font-family: 'Inter', sans-serif;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #2c2c2c;
-      margin-bottom: 20px;
-    }
-    a.button {
-      display: inline-block;
-      padding: 12px 28px;
-      background-color: #245a8a; // Alto blue
-      color: #fff;
-      border-radius: 8px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.3s;
-      &:hover {
-        background-color: #005ea1;
-      }
-    }
-  }
+    .fertility-container {
+        @include container; // Enforces max-width: 1440px
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse; // Image on top for mobile usually, or bottom? Design implies side-by-side. 
+        // If typically text then image, stack is text then image. 
+        // Let's stick to standard flex column for mobile.
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        // Mobile Padding (matching Map Section)
+        padding: 20px;
+        gap: $space-400;
 
-  .image {
-    flex: 1 1 500px;
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      object-fit: cover;
+        // Optional: Border styling if consistent with Map/Video sections
+        // user asked for same "padding/margin", didn't explicitly ask for border but said "previous ones".
+        // Map has border. Video has border. Safe to assume this "floating card" style is the theme.
+        // However, user said "same padding/margin", I will stick to that first. 
+        // If layout looks like a card, I'll add border. The provided Alto image shows full width background or container?
+        // Actually, previous sections (Hero, Value) are containers. Video/Map are floating.
+        // I will stick to the spacing requests first.
+        // Map section had: margin: $space-200 auto; border...
+        // Let's check if "About Fertility" is a "Card" or a "Section".
+        // In the design (if recalled correctly) it might be a split section.
+        // Safest bet: Implement container constraints + proper padding.
     }
-  }
 
-  @media (min-width: $breakpoint) {
-    flex-direction: column;
-    padding: 60px 5%;
-    .content, .image {
-      flex: 1 1 100%;
+    .content {
+        max-width: 600px;
+        
+        h2 {
+            font-family: $heading-font;
+            color: $heading-color;
+            margin-bottom: $space-200;
+        }
+
+        p {
+            font-family: $body-font;
+            color: $body-color;
+            line-height: 1.6;
+            margin-bottom: $space-300;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: $button-background;
+            color: #fff;
+            padding: $space-200 $space-400;
+            border-radius: 2rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+            
+            &:hover {
+                background-color: $button-hover;
+            }
+        }
     }
-  }
+
+    .image {
+        width: 100%;
+        
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: $space-200;
+            object-fit: cover;
+            display: block;
+        }
+    }
 }
 
+// Tablet/Desktop
+@media (min-width: $breakpoint) {
+    #fertility-section {
+        .fertility-container {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            
+            // Desktop Padding (matching Map Section)
+            padding: 50px;
+            gap: $space-600;
+        }
 
+        .content {
+            flex: 1;
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+            padding-right: $space-400; // Visual gap
+        }
+
+        .image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end; // Image on right
+
+            img {
+                width: 100%; 
+                max-width: 600px; // Prevent massive images
+            }
+        }
+    }
+}
