@@ -1,41 +1,100 @@
 @use 'variables' as *;
 @use 'typography' as *;
 @use 'mixins' as *;
-@use 'cards' as *;
 
 #map-section {
-  display: flex;
-  flex-direction: column;   // mobile default
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border-radius: $space-200;
-  border: 1px solid $button-hover;
-  margin: $space-200 auto;
-  text-align: center;
-  max-width: $desktop-cards-max-width;
-  gap: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: $primary-background;
+    margin: $space-600 0;
+    max-height: 1348px;
 
-  .map-image img {
-    height: 170px;
-  }
-}
+    .map-container {
+        @include container;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 $space-300;
 
-/* -------- DESKTOP STYLES -------- */
-@media (min-width: $breakpoint) {
-  #map-section {
-    flex-direction: row;       // ⭐ THIS makes image left & text right
-    text-align: left;
-    align-items: center;
-    gap: 40px;
+        padding: $space-600;
+        gap: $space-400;
+
+        border: 1px solid $border-map-color;
+        border-radius: $space-400;
+
+
+    }
 
     .map-image img {
-      height: auto;
-      width: 530px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 
     .map-text {
-      max-width: 450px;
+        max-width: 600px;
+        
+        h2 {
+            margin-bottom: $space-200;
+            color: $heading-color;
+            font-family: $heading-font;
+        }
+
+        p {
+            margin-bottom: $space-300;
+            color: $body-color;
+            font-family: $body-font;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: $button-background;
+            color: #fff;
+            padding: $space-200 $space-400;
+            border-radius: 2rem;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            
+            &:hover {
+                background-color: $button-hover;
+            }
+        }
     }
-  }
+}
+
+
+@media (min-width: $breakpoint) {
+    #map-section {
+        .map-container {
+            flex-direction: row;
+            text-align: left;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: $space-700;
+            gap: $space-600;
+        }
+
+        .map-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .map-text {
+            flex: 1;
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }

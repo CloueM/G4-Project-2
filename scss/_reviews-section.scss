@@ -1,117 +1,170 @@
 @use 'variables' as *;
 @use 'typography' as *;
 @use 'mixins' as *;
-@use 'cards' as *;
 
 
-//variables for reviews will move later this is for testing//
-$reviews-img-height-mt: 14.75rem; //mt means MOBILE AND TABLET
-$reviews-img-width-desktop: 33.5rem;
-$reviews-img-height-desktop: 43.75rem;
-$body-font-client: 0.8rem;
+$review-img-mobile-w: 335px;
+$review-img-mobile-h: 236px;
+$review-img-tablet-h: 277px;
+$review-img-desktop-w: 500px;
+$review-img-desktop-h: 700px;
 
+$breakpoint-split: 64rem;
 
-
-
-//BUTTONS COLORS
-$expect-btn-hover: #b6b6b6;
-$reviews-btn-bg: #ebf0f5;
-$reviews-btn-fg: #0a4a73;
-$review-btn-wh: 2.5rem; //width and height of button 
-
-.reviews-section{
+.reviews-section {
     background-color: $reviews-background;
-    padding: $space-100;
-    
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: $space-600 0;
 
-    .reviews-container{
-        @include flex-column-center;
-        gap: $space-400;
-        text-align:center;
-    }
-    
-    h2{
-        font-size: $mobile-h3-size;
-        margin-bottom: $space-200;
-        
-
-    }
-
-    h3{
-        font-size: $mobile-h4-size;
-        padding: 1rem;
-    }
-
-    p{  
-        font-size: $body-size;
-        font-family:$body-font;
-        margin-top: $space-400;
-        padding: $space-300;
-        
-    }
-    .reviews-sub {
-        text-transform: uppercase;
-        color: $heading-color;
-
-    }
-
-    .reviews-client{
-        font-size:$body-font-client;
-    }
-
-    img {
-        width:100%;
-        height: auto;
-        max-height: $reviews-img-height-mt;
-        object-fit: contain;
-    }
-
-    .reviews-controls {
-        display: flex;
-        gap: $space-200;
-         justify-content: center;
+    .reviews-container {
+        @include container;
         width: 100%;
-    }
-
-    .reviews-btn{
-        background-color: $reviews-btn-bg;
-        color: $reviews-btn-fg;
-        width: $review-btn-wh;
-        height:$review-btn-wh;
-        border-radius: 50%;
-
-        padding: 0;
-        min-width: 0;
-        min-height: 0;
-        box-sizing: border-box;
-
         display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        line-height: 1;
+        text-align: center;
+        padding: 20px;
+        gap: $space-500;
     }
 
-    .reviews-btn:hover {
-        background-color: $expect-btn-hover;
+    .reviews-contents {
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    }
-}
 
-@media (min-width: $desktop-breakpoint) {
- .reviews-section {
-    padding: $space-800;
-
-    .reviews-container{
-        @include flex-row-center;
-        flex-direction: row-reverse;
-    }
-        h2{
-           font-size: $desktop-h2-size;
+        h2 {
+            font-family: $heading-font;
+            color: $heading-color;
+            margin-bottom: $space-200;
+            font-size: $mobile-h3-size;
         }
 
+        .reviews-sub {
+            text-transform: uppercase;
+            color: $heading-color;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            margin-bottom: $space-300;
+        }
+
+        .reviews-quote {
+            font-family: $heading-font;
+            font-size: 1.5rem;
+            margin-bottom: $space-300;
+            color: $heading-color;
+            line-height: 1.4;
+        }
+
+        .reviews-client {
+            font-family: $body-font;
+            font-size: 1rem;
+            color: $body-color;
+            margin-bottom: $space-400;
+        }
+
+        .reviews-controls {
+            display: flex;
+            gap: $space-200;
+            justify-content: center;
+
+            .reviews-btn {
+                background-color: #ebf0f5;
+                color: $button-background;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                
+                &:hover {
+                    background-color: darken(#ebf0f5, 10%);
+                }
+            }
+        }
+    }
+
     img {
-        max-width: $reviews-img-width-desktop;
-         max-height: $reviews-img-height-desktop;
+
+        width: $review-img-mobile-w;
+        height: $review-img-mobile-h;
+        object-fit: contain;
+        border-radius: $space-200;
+        margin-top: $space-200;
+        order: 2;
     }
 }
+
+
+@media (min-width: $breakpoint-tablet) and (max-width: $breakpoint-split) {
+    .reviews-section {
+        .reviews-container {
+
+            flex-direction: column;
+        }
+
+        img {
+            width: auto; 
+            height: $review-img-tablet-h; 
+            max-width: 100%;
+            order: -1;
+            margin-top: 0;
+            margin-bottom: $space-400;
+        }
+    }
+}
+
+
+$breakpoint-desktop-min: $breakpoint-split + 0.0625rem;
+@media (min-width: $breakpoint-desktop-min) {
+    .reviews-section {
+        .reviews-container {
+            flex-direction: row-reverse;
+            justify-content: center;
+            align-items: center; 
+            text-align: center;
+            padding: $space-600;
+            gap: 0;
+        }
+
+        .reviews-contents {
+            flex: 1; 
+            max-width: 860px;
+            align-items: flex-start;
+            padding-left: 0;
+            order: unset;
+            align-items: center;
+            gap:0;
+            h2 {
+                font-size: $desktop-h2-size;
+                margin:0;
+                padding-bottom: $space-600;
+            }
+
+            .reviews-quote {
+                font-size: 2rem;
+                margin:0;
+            }
+
+            .reviews-controls {
+                justify-content: flex-start;
+            }
+        }
+
+        img {
+
+            width: $review-img-desktop-w;
+            height: $review-img-desktop-h;
+            flex-shrink: 0;
+            margin-top: 0;
+            order: unset;
+        }
+    }
 }
