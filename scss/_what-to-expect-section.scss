@@ -3,9 +3,6 @@
 @use 'mixins' as *;
 @use 'cards' as *;
 
-
-
-
 #expect-section,
 #expect-section-desktop {
     background-color: $secondary-background;
@@ -14,15 +11,16 @@
     flex-direction: column;
     align-items: center;
 
+    .container {
+        background-color: $secondary-background;
+        padding: $space-200;
+        border-radius: $space-200;
+        width: 100%;
 
- .container{
-    background-color: $secondary-background;
-    padding: $space-200;
-    border-radius: $space-200;
-    width: 100%;
-    h3 {
-        margin: $space-100 0;
-        cursor: pointer;
+        h3 {
+            margin: $space-100 0;
+            cursor: pointer;
+        }
     }
 }
 
@@ -30,25 +28,20 @@
     background-color: $expect-background;
 }
 
-.expect-body{
+.expect-body {
     @include flex-column-center;
     gap: $space-200;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-
-    //ROLL EFFECT
-    transition: 
-    max-height 0.45s ease,            
-    opacity 0.3s ease;
+    // ROLL EFFECT
+    transition: max-height 0.45s ease, opacity 0.3s ease;
 }
-    
-//SHOWS THE BODY
-.container.is-open .expect-body{
+
+// SHOWS THE BODY
+.container.is-open .expect-body {
     max-height: $expect-body-max-height;
     opacity: 1;
-
-    }
 }
 
 #expect-section-desktop {
@@ -56,41 +49,42 @@
 }
 
 @media (min-width: $breakpoint) {
-
     #expect-section {
         display: none;
     }
 
+    #expect-section-desktop {
+        display: block;
 
-#expect-section-desktop {
-    display: block;
-    .expect-layout{
-        width: 100%;
-        display: flex;
-        gap: $space-500;
-        align-items: flex-start;
-        max-width: $desktop-cards-max-width;
-        margin: 0 auto;
-    }
+        .expect-layout {
+            width: 100%;
+            display: flex;
+            gap: $space-500;
+            align-items: flex-start;
+            max-width: $desktop-cards-max-width;
+            margin: 0 auto;
+        }
 
-    h2 {
-        max-width: $desktop-cards-max-width;
-        margin: $space-500 auto;
-    }
+        h2 {
+            max-width: $desktop-cards-max-width;
+            margin: $space-500 auto;
+        }
 
-    .expect-left,
-    .expect-img-right {
-    width: 50%; }
-    
-    .expect-img-right img {
-        width: 60%;
-        height: auto;
-        border-radius: $space-200;
-        display:block;
-        max-width: $expect-img-desktop;
-     }
-       .expect-body img{
-        display: none;
-       } 
+        .expect-left,
+        .expect-img-right {
+            width: 50%;
+        }
+
+        .expect-img-right img {
+            width: 60%;
+            height: auto;
+            border-radius: $space-200;
+            display: block;
+            max-width: $expect-img-desktop;
+        }
+
+        .expect-body img {
+            display: none;
+        }
     }
 }
