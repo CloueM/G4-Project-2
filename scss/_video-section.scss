@@ -2,54 +2,70 @@
 @use 'typography' as *;
 @use 'mixins' as *;
 
-
 .video-section {
     background-color: $video-background;
-    width: 95vw;
-    margin: 0 auto;
-    border-radius: $video-border;
-    padding: $space-100;
+    padding: $space-500 $space-200;
+    margin: $space-600 auto; // Vertical spacing and centered
+    width: calc(100% - #{$space-400}); // Leave specific gap on sides
+    max-width: 90rem; // 1440px max width
+    border-radius: $video-border; // Rounded corners
+}
+
+.video-container {
+    // Container mixin not strictly needed for width anymore since section has max-width
+    // but good for flex behavior
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .video-section h3 {
     text-align: center;
+    color: $heading-color;
+    margin-bottom: $space-400;
+    max-width: 40rem; // Limit text width for readability
+    line-height: $subheading-line-height;
+    font-weight: $subheading-weight;
+    font-family: $heading-font;
 }
 
 .video {
     position: relative;
-    padding-top: 56%;
-    height: 0rem;
+    width: 100%;
+    // 16:9 Aspect Ratio
+    padding-top: 56.25%; 
+    height: 0;
     overflow: hidden;
-    border-radius: $space-200; // differs from usual
+    border-radius: $video-border;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); // Optional: adds slight depth like the image
 }
 
 .video iframe {
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    border: none;
 }
 
-
-@media (min-width: $breakpoint) {
-
+@media (min-width: $breakpoint-tablet) {
     .video-section {
-        margin-top: $space-500;
-        padding-bottom: $space-700;
-    }
-
-    .video-section h3 {
-        padding: $space-200 0;
+        padding: $space-600 $space-400;
+        margin-top: $space-800; // More separation on desktop
+        margin-bottom: $space-800;
     }
 
     .video {
-        width: 65vw;
-        margin: 0 auto;
-        padding-top: 39%;
-        height: 0rem;
-        overflow: hidden;
-        border-radius: $video-border;
+        width: 80%;
+        padding-top: calc(80% * 0.5625); 
     }
+}
 
+@media (min-width: $breakpoint-desktop) {
+    .video {
+        width: 70%;
+        padding-top: calc(70% * 0.5625);
+    }
 }
