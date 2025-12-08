@@ -4,7 +4,8 @@
 
 .hero-section {
     @include section-padding;
-    background-color: $hero-background;
+    background-color: $hero-gradient-start; // Fallback
+    background-image: linear-gradient(to bottom, $hero-gradient-start, $hero-gradient-end);
     padding-top: $space-400;
 }
 
